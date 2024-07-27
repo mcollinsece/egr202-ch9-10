@@ -40,7 +40,7 @@ void runTest() {
         dup2(output_fd, STDOUT_FILENO);
 
         // Call the original program's main function
-        int result = system("./Lab10-2");
+        int result = system("./lab10-2");
 
         // Restore stdin and stdout
         dup2(saved_stdin_fd, STDIN_FILENO);
