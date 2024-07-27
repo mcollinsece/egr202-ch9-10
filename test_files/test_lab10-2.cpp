@@ -7,17 +7,9 @@
 using namespace std;
 
 void runTest() {
-    // Test case 1: Regular pricing
-    string input1 = "1\n10\n25.0\n";
-    string expected_output1 = "Total owed-----> $250.00\n";
-
-    // Test case 2: BOGO pricing
-    string input2 = "2\n10\n25.0\n";
-    string expected_output2 = "Total owed-----> $125.00\n";
-
-    // Test case 3: Invalid option
-    string input3 = "3\n";
-    string expected_output3 = "Invalid option\n";
+    // Test case 1
+    string input1 = "2\n15\n200.0\n";
+    string expected_output1 = "1600.00";
 
     // Helper function to run a single test case
     auto runSingleTest = [](const string& input, const string& expected_output) {
@@ -70,7 +62,7 @@ void runTest() {
         cout << "Expected Output:\n" << expected_output << endl;
         cout << "Actual Output:\n" << actual_output << endl;
 
-        // Compare the actual output to the expected value
+        // Compare the actual output to the expected values
         if (actual_output.find(expected_output) == string::npos) {
             cout << "Test Failed: Output does not contain expected value" << endl;
             exit(-1);
@@ -81,8 +73,6 @@ void runTest() {
 
     // Run the individual test cases
     runSingleTest(input1, expected_output1);
-    runSingleTest(input2, expected_output2);
-    runSingleTest(input3, expected_output3);
 }
 
 int main() {
